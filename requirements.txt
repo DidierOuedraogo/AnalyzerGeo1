@@ -1,23 +1,312 @@
-# requirements.txt - Version Streamlit Cloud Optimisée
-# Analyseur Géologique Compatible Leapfrog Geo
+# ================================================================================
+# Analyseur Géologique GeoINR - Dépendances Production
 # Auteur: Didier Ouedraogo, P.Geo
+# Version: 1.3
+# Date: 24 décembre 2024
+# Compatibilité: Python 3.11+ | Streamlit Cloud | Docker
+# ================================================================================
 
-# Framework principal
-streamlit>=1.28.0
+# =============================================================================
+# FRAMEWORK PRINCIPAL - STREAMLIT
+# =============================================================================
+streamlit>=1.29.0,<2.0.0
+# Interface web moderne et interactive pour applications data science
 
-# Manipulation de données
-pandas>=2.0.0
-numpy>=1.24.0
+# =============================================================================
+# MANIPULATION ET ANALYSE DE DONNÉES
+# =============================================================================
 
-# Visualisations interactives
-plotly>=5.15.0
+# DataFrames et calculs numériques
+pandas>=2.1.0,<3.0.0
+# Manipulation de données tabulaires - Standard industrie
+numpy>=1.24.0,<2.0.0
+# Calculs numériques optimisés - Base de l'écosystème scientifique Python
 
-# Calculs scientifiques et ML
-scipy>=1.10.0
-scikit-learn>=1.3.0
+# Calculs scientifiques avancés
+scipy>=1.11.0,<2.0.0
+# Algorithmes scientifiques - Optimisation, statistiques, algèbre linéaire
 
-# Gestion des dates
-python-dateutil>=2.8.0
+# =============================================================================
+# MACHINE LEARNING ET INTELLIGENCE ARTIFICIELLE
+# =============================================================================
 
-# PAS D'AUTRES DÉPENDANCES LOURDES
-# pour compatibilité Streamlit Cloud
+# Bibliothèque ML principale
+scikit-learn>=1.3.0,<2.0.0
+# Algorithmes ML standards - Random Forest, métriques, preprocessing
+
+# Optimisation numérique (accélération calculs)
+numba>=0.58.0,<1.0.0
+# Compilation JIT pour accélération des calculs Python
+
+# Parallélisation et persistance
+joblib>=1.3.0,<2.0.0
+# Parallélisation efficace et sauvegarde modèles ML
+
+# =============================================================================
+# VISUALISATIONS INTERACTIVES
+# =============================================================================
+
+# Graphiques interactifs principaux
+plotly>=5.17.0,<6.0.0
+# Visualisations 3D, interactives, exportables - Compatible Streamlit
+
+# Intégration Streamlit-Plotly
+streamlit-plotly-events>=0.0.6
+# Événements interactifs entre Streamlit et Plotly
+
+# =============================================================================
+# GESTION DES DATES ET TEMPS
+# =============================================================================
+python-dateutil>=2.8.0,<3.0.0
+# Parsing et manipulation de dates - Métadonnées temporelles
+
+# =============================================================================
+# FORMATS DE FICHIERS ET EXPORT
+# =============================================================================
+
+# Excel moderne (XLSX)
+openpyxl>=3.1.0,<4.0.0
+# Lecture/écriture fichiers Excel modernes
+
+# Excel optimisé (écriture)
+xlsxwriter>=3.1.0,<4.0.0
+# Création fichiers Excel optimisée avec formatage avancé
+
+# Détection encodage fichiers
+chardet>=5.2.0,<6.0.0
+# Auto-détection encodage pour import de données robuste
+
+# =============================================================================
+# LOGGING ET MONITORING
+# =============================================================================
+loguru>=0.7.0,<1.0.0
+# Logging moderne et flexible - Débogage et monitoring
+
+# =============================================================================
+# VALIDATION ET CONFIGURATION
+# =============================================================================
+pydantic>=2.5.0,<3.0.0
+# Validation de données et configuration type-safe
+
+# =============================================================================
+# SYSTÈME ET PERFORMANCE
+# =============================================================================
+psutil>=5.9.0,<6.0.0
+# Monitoring système - RAM, CPU, processus
+
+# =============================================================================
+# CONCURRENCE ET PARALLÉLISME
+# =============================================================================
+concurrent-futures>=3.1.1
+# Parallélisation avancée pour gros calculs
+
+# =============================================================================
+# INTERFACE UTILISATEUR ENRICHIE
+# =============================================================================
+
+# Grilles de données interactives
+streamlit-aggrid>=0.3.4,<1.0.0
+# Tables interactives avec tri, filtrage, sélection
+
+# Composants UI additionnels
+streamlit-option-menu>=0.3.6,<1.0.0
+# Menus de navigation avancés
+
+# Upload de fichiers amélioré
+streamlit-file-browser>=0.1.5
+# Navigateur de fichiers intégré
+
+# =============================================================================
+# GÉOLOGIE ET CARTOGRAPHIE (OPTIONNEL - Décommentez si nécessaire)
+# =============================================================================
+
+# # Données géospatiales
+# geopandas>=0.14.0,<1.0.0
+# # Manipulation de données géospatiales - Shapefiles, projections
+# 
+# # Géométries spatiales
+# shapely>=2.0.0,<3.0.0
+# # Opérations géométriques 2D/3D
+# 
+# # Projections cartographiques
+# pyproj>=3.6.0,<4.0.0
+# # Transformations de coordonnées et projections
+
+# # Projections stéréographiques géologiques
+# mplstereonet>=0.6.2,<1.0.0
+# # Projections stéréographiques pour données structurales
+
+# =============================================================================
+# BASES DE DONNÉES (OPTIONNEL)
+# =============================================================================
+
+# # SQLite et SQL
+# sqlite3
+# # Base de données légère intégrée (inclus dans Python standard)
+# 
+# # SQLAlchemy ORM
+# sqlalchemy>=2.0.0,<3.0.0
+# # ORM moderne pour bases de données relationnelles
+
+# =============================================================================
+# DÉVELOPPEMENT ET TESTS (OPTIONNEL - Pour développeurs)
+# =============================================================================
+
+# # Tests unitaires
+# pytest>=7.4.0,<8.0.0
+# # Framework de tests moderne
+# 
+# # Couverture de code
+# pytest-cov>=4.1.0,<5.0.0
+# # Mesure couverture de code
+# 
+# # Formatage de code
+# black>=23.0.0,<24.0.0
+# # Formatage automatique du code Python
+# 
+# # Linting
+# flake8>=6.0.0,<7.0.0
+# # Vérification qualité du code
+# 
+# # Type checking
+# mypy>=1.5.0,<2.0.0
+# # Vérification statique des types
+
+# =============================================================================
+# WEB ET API (OPTIONNEL - Pour intégrations)
+# =============================================================================
+
+# # Requêtes HTTP
+# requests>=2.31.0,<3.0.0
+# # Client HTTP simple et élégant
+# 
+# # API REST
+# fastapi>=0.104.0,<1.0.0
+# # Framework API moderne et rapide
+# 
+# # Serveur ASGI
+# uvicorn>=0.24.0,<1.0.0
+# # Serveur ASGI pour FastAPI
+
+# =============================================================================
+# CLOUD ET DÉPLOIEMENT
+# =============================================================================
+
+# # AWS SDK (si déploiement AWS)
+# boto3>=1.29.0,<2.0.0
+# # SDK Amazon Web Services
+# 
+# # Google Cloud (si déploiement GCP)
+# google-cloud-storage>=2.10.0,<3.0.0
+# # Google Cloud Storage
+# 
+# # Azure (si déploiement Azure)
+# azure-storage-blob>=12.19.0,<13.0.0
+# # Azure Blob Storage
+
+# =============================================================================
+# SÉCURITÉ ET AUTHENTIFICATION
+# =============================================================================
+
+# # Hashage sécurisé
+# bcrypt>=4.1.0,<5.0.0
+# # Hashage de mots de passe sécurisé
+# 
+# # Tokens JWT
+# pyjwt>=2.8.0,<3.0.0
+# # JSON Web Tokens pour authentification
+
+# =============================================================================
+# FORMATS SCIENTIFIQUES SPÉCIALISÉS
+# =============================================================================
+
+# # HDF5 (gros datasets scientifiques)
+# h5py>=3.9.0,<4.0.0
+# # Format HDF5 pour données scientifiques volumineuses
+# 
+# # NetCDF (données géoscientifiques)
+# netcdf4>=1.6.0,<2.0.0
+# # Format NetCDF pour données géoscientifiques
+# 
+# # Images scientifiques
+# pillow>=10.0.0,<11.0.0
+# # Manipulation d'images - Cartes, diagrammes
+
+# =============================================================================
+# DÉPENDANCES SYSTÈME (Installation automatique)
+# =============================================================================
+
+# Ces packages peuvent nécessiter des dépendances système :
+# 
+# Ubuntu/Debian:
+# sudo apt-get update
+# sudo apt-get install -y python3-dev gcc g++ libproj-dev libgeos-dev libspatialindex-dev
+# 
+# CentOS/RHEL:
+# sudo yum install -y python3-devel gcc gcc-c++ proj-devel geos-devel spatialindex-devel
+# 
+# macOS (avec Homebrew):
+# brew install proj geos spatialindex
+# 
+# Windows:
+# Les dépendances sont généralement incluses dans les wheels Python
+
+# =============================================================================
+# NOTES IMPORTANTES
+# =============================================================================
+
+# 1. COMPATIBILITÉ PYTHON:
+#    - Minimum: Python 3.11
+#    - Recommandé: Python 3.11+
+#    - Testé sur: 3.11, 3.12
+
+# 2. STREAMLIT CLOUD:
+#    - Tous les packages listés sont compatibles
+#    - Limite mémoire: 1GB (optimiser datasets si nécessaire)
+#    - Limite CPU: Modérée (parallélisation limitée)
+
+# 3. DOCKER:
+#    - Image de base recommandée: python:3.11-slim
+#    - Ajouter dépendances système si packages géospatiaux activés
+
+# 4. DÉVELOPPEMENT LOCAL:
+#    - Créer environnement virtuel: python -m venv venv
+#    - Activer: source venv/bin/activate (Linux/Mac) ou venv\Scripts\activate (Windows)
+#    - Installer: pip install -r requirements.txt
+
+# 5. PRODUCTION:
+#    - Fixer versions exactes en production
+#    - Tester avec pip-tools: pip-compile requirements.in
+
+# 6. MISES À JOUR:
+#    - Vérifier compatibilité avant mise à jour majeure
+#    - Tester en environnement de développement d'abord
+
+# =============================================================================
+# COMMANDES UTILES
+# =============================================================================
+
+# Installation standard:
+# pip install -r requirements.txt
+
+# Installation avec cache:
+# pip install -r requirements.txt --cache-dir .pip-cache
+
+# Installation sans cache (problèmes de compatibilité):
+# pip install -r requirements.txt --no-cache-dir
+
+# Mise à jour des packages:
+# pip install -r requirements.txt --upgrade
+
+# Installation pour développement (avec packages optionnels):
+# pip install -r requirements.txt[dev]
+
+# Génération requirements.txt depuis environnement:
+# pip freeze > requirements-freeze.txt
+
+# Vérification sécurité:
+# pip-audit
+
+# =============================================================================
+# FIN DU FICHIER REQUIREMENTS
+# =============================================================================
